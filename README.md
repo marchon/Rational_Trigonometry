@@ -8,7 +8,7 @@ The laws are based on the mathematical concepts of Quadrance and Spread.
 
 The **Quadrance** of any ordered pair of numbers A1 and A2 is
 
-![](http://www.sciweavers.org/upload/Tex2Img_1394460658/render.png)
+![Quadrance](http://www.sciweavers.org/upload/Tex2Img_1394460658/render.png)
 
 The **spread** between two lines, l1 and l2:
 
