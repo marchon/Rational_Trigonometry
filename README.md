@@ -3,7 +3,7 @@
 [http://en.wikipedia.org/wiki/Rational_trigonometry](http://en.wikipedia.org/wiki/Rational_trigonometry "Wikipedia - Rational Trigonometry")
 
 
-*Work in Progress* - *Don't use Code in projects yet* :P
+*Work in Progress* - *Don't use code in projects yet* :P
 
 Below are the five main laws of Rational Trigonometry as outlined in Professor Wildberger's book: *Divine Proportions - Rational Trigonometry to Universal Geometry*
 
@@ -20,7 +20,7 @@ The **spread** between two lines, l1 and l2:
 ## Five Main Laws: ##
 
 
-**Triple Quad Formula** - The three points A1, A_2, A_3 are collinear (meaning they all lie on single line) precisely when
+**Triple Quad Formula** - The three points A1, A_2, A_3 are collinear (meaning they all lie on a single line) precisely when
 
 ![](formulas/triple_quad.png)
 
