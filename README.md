@@ -2,6 +2,9 @@
 
 [http://en.wikipedia.org/wiki/Rational_trigonometry](http://en.wikipedia.org/wiki/Rational_trigonometry "Wikipedia - Rational Trigonometry")
 
+
+*Work in Progress* - *Don't use Code in projects yet* :P
+
 Below are the five main laws of Rational Trigonometry as outlined in Professor Wildberger's book: *Divine Proportions - Rational Trigonometry to Universal Geometry*
 
 The laws are based on the mathematical concepts of Quadrance and Spread.
