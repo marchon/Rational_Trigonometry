@@ -1,8 +1,6 @@
 // Rational Trigonometry Implementation in C
 
 
-#include <stdint.h>
-
 #ifndef RT_H
 #define RT_H
 
@@ -12,217 +10,86 @@ extern "C"
 {
 	#endif
 
+	#include <stdint.h>
 
-	// Three-Vector Mathematics
+	// Type Defenitions
 
-	#define threevect int threevect[3];						// A Three-Vector
-	#define vect_add int vect_add[3];						// Three-Vector Addition
-	#define vect_sub int vect_sub[3];						// Three-Vector Subtraction
-	#define vect_scale int vect_scale[3];					// Scalar multiplication for a Three-Vector
-	#define vect_quad int Q;								// Quadrance in three dimensions -- is always positive
-	#define vect_perp bool vect_perp;						// Boolean value for if two Three-Vectors are perpindicular
-	#define vect_par  bool vect_par;						// Boolean value for if two Three-Vectos are parallel
-	#define vect_dot  int dot;								// Dot product between two Three-Vectors
-	#define vect_spread int8_t s_value;						// Spread between two Three-Vectors (takes values between 0 and 1 in mathematics)
-
-
-	// Five Main Laws
-
-	extern int RT_Trip_Quad();
-	extern int RT_Pyth();
-	extern int RT_Spread_Law();
-	extern int RT_Cross_Law();
-	extern int RT_Trip_Spread();
-
-
+	typedef struct threevect
+	{
+		int x, y, z;
+		
+	} Vect;
 
 	// Three-Vector Addition
 	
-	extern int vect_add(int vect_1[3], int vect_2[3])
-	{
-			int i;
-
-			for(i=0; i < 3; ++i;)
-			{
-				*vect_1[i] = vect1;
-				*vect_2[i] = vect2;
-				*vect_add[i] = vect1 + vect2;
-			}
-				
-			return vect_add;
-
-	}
+	Vect vect_add(Vect v1, Vect v2);
 
 
 	// Three-Vector Subtraction
 
-	extern int vect_sub(int vect_1[3], int vect_2[3])
-	{
-			int i;
-
-			for(i=0; i < 3; ++i;)
-			{
-				*vect_1[i] = vect1;
-				*vect_2[i] = vect2;
-				*vect_sub[i] = vect2 - vect1;
-			}
-				
-			return vect_sub;
-
-	}
+	Vect vect_sub(Vect v1, Vect v2);
 
 
 	// Three-Vector Scalar Multiplier
 
-	extern int vect_scale(int vect_1[3], int scale)
-	{
-			int i;
-
-			for(i=0; i < 3; ++i;)
-			{
-				*vect_1[i] = vect1;
-				*vect_scale[i] = vect1 * scale;
-			}
-				
-			return vect_scale;
-
-	}
-
+	Vect vect_scale(Vect v1, int scale);
 
 	// Three-vector dot product (multiplying two three-vectors - returns scalar value of type int)
 
-	extern int vect_dot(int * vect_1)
-	{
-			int i;
-			int total = 0;
-
-			for(i=0; i < 3; ++i;)
-			{
-				total += vect_1[i] * vect_1[i];
-				vect_quad = total;
-
-			}
-				
-			return vect_quad;
-
-	}
-
-
+	int vect_dot(Vect v1, Vect v2;
 
 
 	// Three-Vector Quadrance (an important Rational Trigonometry concept)
 
-	extern int vect_quad(int * vect_1)
-	{
-			int i;
-			int total = 0;
-
-			for(i=0; i < 3; ++i;)
-			{
-				total += vect_1[i] * vect_1[i];
-				vect_quad = total;
-
-			}
-				
-			return vect_quad;
-
-	}
-
+	int vect_quad(Vect v1);
 
 
 	// Spread between two Three-Vectors (an important Rational Trigonometry concept)
 
-	extern int vect_spread(int vect_1[2], vect_2[2])
-	{
-			int i;
-			int quad_1 = vect_quad(vect_1[2]);
-			int quad_2 = vect_quad(vect_2[2]);
-
-			for(i=0; i < 2; ++i;)
-			{
-				for(j=0; j < 2; ++j;)
-
-			}
-				
-			return vect_spread;
-
-	}
-
+	int8_t vect_spread_2(Vect v1, Vect v2);
 
 
 	// Spread between three Three-Vectors (also known as "Solid Spread" -- each vector defines 4 edges of a parallelepiped)
 
-	extern int vect_spread(int vect_1[3], vect_2[3], int vect_3[3])
-	{
-			int i;
-			int quad_1 = vect_quad(vect_1[3]);
-			int quad_2 = vect_quad(vect_2[3]);
-			int quad_3 = vect_quad(vect_3[3]);
-
-			for(i=0; i < 3; ++i;)
-			{
-				total += vect_1[i] * vect_1[i];
-				vect_quad = total;
-
-			}
-				
-			return vect_spread;
-
-	}
-
-
+	int8_t vect_spread_3(Vect v1, Vect v2, Vect v3);
 
 
 	// Determines if two Three-Vectors are Perpindicular (right angle)
 
-	extern int vect_perp(int vect_1[3], int vect_2[3])
-	{
-			int i;
-
-			for(i=0; i < 3; ++i)
-			{
-				total += vect_1[i] * vect_2[i];
-				if (total = 0)
-					vect_perp = true;
-				else
-					vect_perp = false;
-
-			}
-				
-			return vect_perp;
-
-	}
+	bool vect_perp(Vect v1, Vect v2);
 
 
 	// Determines if two Three-Vectors are Parallel (i.e. strictly multiples of each other)
 
-	extern int vect_par(int vect_1[3], int vect_2[3])
-	{
-			int i;
+	bool vect_par(Vect v1, Vect v2);
 
-			for(i=0; i < 3; ++i)
-			{
-				value_1 = vect_1[0] * vect_2[1] - vect_1[1] * vect_2[0];
-				value_2 = vect_1[1] * vect_2[2] - vect_1[2] * vect_2[1];
-				value_3 = vect_1[2] * vect_2[0] - vect_1[0] * vect_2[2];
 
-				if (value_1 = 0, value_2 = 0, value_3 = 0)
-					vect_par = true;
-				else
-					vect_par = false;
+	// Five Main Laws
 
-			}
-				
-			return vect_par;
+	// Q1 = Quad(vect1)
+	// Q2 = Quad(vect2)
+	// Q3 = Quad(vect_sub(vect1, vect2)) = Quad(vect2 - vect1)
 
-	}
+	int RT_Trip_Quad(Vect v1, Vect v2);
+
+	// Checks perpindicularity between two vectors
+	bool RT_Pyth(Vect v1, Vect v2);
 
 
 
+	// Triangle Equations
+	// For any triangle A1,A2,A3 with non-zero quadrances
+	
+	// Spread Law
+	void RT_Spread_Law(Vect v1, Vect v2, Vect v3, bool origin);
 
-	// FIVE MAIN LAWS IMPLEMENTATION
+
+	// Cross Law
+	void RT_Cross_Law(Vect v1, Vect v2, Vect v3, bool origin);
 
 
+	// Triple Spread Formula
+	void RT_Trip_Spread(Vect v1, Vect v2, Vect v3, bool origin);
 
 
 
