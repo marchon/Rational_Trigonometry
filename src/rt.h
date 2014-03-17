@@ -17,8 +17,14 @@ extern "C"
 	typedef struct threevect
 	{
 		int x, y, z;
-		
+
 	} Vect;
+
+	typedef struct coord
+	{
+		int x, y, z;
+
+	} Point;
 
 	// Three-Vector Addition
 	
@@ -36,7 +42,7 @@ extern "C"
 
 	// Three-vector dot product (multiplying two three-vectors - returns scalar value of type int)
 
-	int vect_dot(Vect v1, Vect v2;
+	int vect_dot(Vect v1, Vect v2);
 
 
 	// Three-Vector Quadrance (an important Rational Trigonometry concept)
@@ -46,12 +52,12 @@ extern "C"
 
 	// Spread between two Three-Vectors (an important Rational Trigonometry concept)
 
-	int8_t vect_spread_2(Vect v1, Vect v2);
+	int8_t vect_spread(Vect v1, Vect v2);
 
 
 	// Spread between three Three-Vectors (also known as "Solid Spread" -- each vector defines 4 edges of a parallelepiped)
 
-	int8_t vect_spread_3(Vect v1, Vect v2, Vect v3);
+	int8_t solid_spread(Vect v1, Vect v2, Vect v3);
 
 
 	// Determines if two Three-Vectors are Perpindicular (right angle)
@@ -77,8 +83,17 @@ extern "C"
 
 
 
+
 	// Triangle Equations
+
 	// For any triangle A1,A2,A3 with non-zero quadrances
+
+	// Quadrance of line segment (e.g. for finding quadrance of a shape's side or edge)
+	int seg_quad(Point p1, Point p2);
+
+
+	// Find the quadrance of each side of a triangle defined by three points p1, p2, p3
+	void tri_quad(Point p1, Point p2, Point p3);
 	
 	// Spread Law
 	void RT_Spread_Law(Vect v1, Vect v2, Vect v3, bool origin);
@@ -90,9 +105,6 @@ extern "C"
 
 	// Triple Spread Formula
 	void RT_Trip_Spread(Vect v1, Vect v2, Vect v3, bool origin);
-
-
-
 
 
 
