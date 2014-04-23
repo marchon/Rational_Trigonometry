@@ -11,6 +11,7 @@ extern "C"
 	#endif
 
 	#include <stdint.h>
+	#include <stdbool.h>
 
 	// Type Defenitions
 
@@ -68,43 +69,6 @@ extern "C"
 	// Determines if two Three-Vectors are Parallel (i.e. strictly multiples of each other)
 
 	bool vect_par(Vect v1, Vect v2);
-
-
-	// Five Main Laws
-
-	// Q1 = Quad(vect1)
-	// Q2 = Quad(vect2)
-	// Q3 = Quad(vect_sub(vect1, vect2)) = Quad(vect2 - vect1)
-
-	int RT_Trip_Quad(Vect v1, Vect v2);
-
-	// Checks perpindicularity between two vectors
-	bool RT_Pyth(Vect v1, Vect v2);
-
-
-
-
-	// Triangle Equations
-
-	// For any triangle A1,A2,A3 with non-zero quadrances
-
-	// Quadrance of line segment (e.g. for finding quadrance of a shape's side or edge)
-	int seg_quad(Point p1, Point p2);
-
-
-	// Find the quadrance of each side of a triangle defined by three points p1, p2, p3
-	void tri_quad(Point p1, Point p2, Point p3);
-	
-	// Spread Law
-	void RT_Spread_Law(Vect v1, Vect v2, Vect v3, bool origin);
-
-
-	// Cross Law
-	void RT_Cross_Law(Vect v1, Vect v2, Vect v3, bool origin);
-
-
-	// Triple Spread Formula
-	void RT_Trip_Spread(Vect v1, Vect v2, Vect v3, bool origin);
 
 
 
